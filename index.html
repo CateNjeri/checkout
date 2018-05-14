@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <script src="index.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+<div class="container" id="app">
+
+    <h2>Checkout :{Amount}</h2>
+    <p>Select your checkout mode</p>
+    <hr><hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <p>Mpesa Payment</p>
+      <input type="radio" name="" value="mpesa" v-model="paymentOption"> <img src="images/mpesa.png" alt="">
+
+      <div class="" v-show="paymentOption === 'mpesa'">
+        <div class="form-group">
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+         <br>
+         <button type="submit" class="btn btn-primary">Pay</button>
+    </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>Telcom Money</p>
+      <input type="radio" name="" value="tkash" v-model="paymentOption"> <img src="images/tkash.png" alt="">
+      <div class="" v-show="paymentOption === 'tkash'">
+        <div class="form-group">
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+         <br>
+         <button type="submit" class="btn btn-primary">Pay</button>
+    </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>Airtel Money</p>
+      <input type="radio" name="" value="airtel" v-model="paymentOption"> <img src="images/airtel-money.png" alt="">
+      <div class="" v-show="paymentOption === 'airtel'">
+        <div class="form-group">
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+         <br>
+         <button type="submit" class="btn btn-primary">Pay</button>
+    </div>
+      </div>
+    </div>
+  </div>
+<br><br>
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <p>Card Payment</p>
+      <input type="radio" name="" value="card" v-model="paymentOption"> <img src="images/visa.png" alt="">
+      <div class="" v-show="paymentOption === 'card'">
+        <div class="form-group row">
+         <label for="example-text-input" class="col-2 col-form-label">Card Name</label>
+         <div class="col-10">
+        <input class="form-control" type="text" value="John Doe" id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-email-input" class="col-2 col-form-label">Email</label>
+  <div class="col-10">
+    <input class="form-control" type="email" value="email@example.com" id="example-email-input">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-tel-input" class="col-2 col-form-label">Card Number</label>
+  <div class="col-10">
+    <input class="form-control" type="tel" value="1-555-555-5555" id="example-tel-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-week-input" class="col-2 col-form-label">Year</label>
+  <div class="col-10">
+    <input class="form-control" type="year" value="2018" id="example-year-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-month-input" class="col-2 col-form-label">Month</label>
+  <div class="col-10">
+    <input class="form-control" type="month" value="2018-05" id="example-month-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label"> Exp Date</label>
+  <div class="col-10">
+    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-number-input" class="col-2 col-form-label">CVC</label>
+  <div class="col-10">
+    <input class="form-control" type="number" value="42" id="example-number-input">
+  </div>
+</div>
+<div class="form-group row">
+<button type="submit" class="btn btn-primary">Pay</button>
+</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>Equitel Money</p>
+      <input type="radio" name="" value="equitel" v-model="paymentOption"> <img src="images/equitel.jpg" alt="">
+      <div class="" v-show="paymentOption === 'equitel'">
+        <div class="form-group">
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+         <br>
+         <button type="submit" class="btn btn-primary">Pay</button>
+    </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>Cheque Payment</p>
+      <input type="radio" name="" value="cheque" v-model="paymentOption"> <img src="images/chequee.jpg" alt="">
+      <div class="" v-show="paymentOption === 'cheque'">
+        <p>Upload image of your cheque</p>
+        <input name="myFile" type="file">
+      </div>
+    </div>
+  </div>
+<br><br>
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <p>Bank Transfer</p>
+      <input type="radio" name="" value="bankslip" v-model="paymentOption"> <img src="images/bslip.jpg" alt="">
+      <div class="" v-show="paymentOption === 'bankslip'">
+        <p>Upload image of the bank deposit slip</p>
+        <input name="myFile" type="file">
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>PesaLink</p>
+      <input type="radio" name="" value="pesa" v-model="paymentOption"> <img src="images/pesalink.jpg" alt="">
+      <div class="" v-show="paymentOption === 'pesa'">
+        <div class="form-group">
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+          <br>
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Merchant Number">
+
+         <br>
+         <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>Cash Payment</p>
+      <input type="radio" name="" value="cash" v-model="paymentOption"> <img src="images/cash.jpeg" alt="">
+      <div class="" v-show="paymentOption === 'cash'">
+        <div class="form-group">
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agent Number">
+         <br>
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Amount">
+
+         <br>
+         <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <hr>
+  <div class="row">
+  <div class="col-sm-4">
+    <p>SMS Payment</p>
+    <input type="radio" name="" value="sms" v-model="paymentOption"> <img src="images/sms.png" alt="">
+    <div class="" v-show="paymentOption === 'sms'">
+      <div class="form-group">
+       <input type="text" class="form-control" id="formGroupExampleInput" placeholder="phone-07** *** ***">
+
+       <br>
+       <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+<hr>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+  el: '#app',
+  data: {
+    paymentOption: ''
+  }
+})
+
+</script>
